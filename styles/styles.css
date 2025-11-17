@@ -1,0 +1,404 @@
+/* =========================
+    🎨 PALETAS E VARIÁVEIS
+========================= */
+:root {
+  --cor-bg: #fffaf2;
+  --cor-primaria: #d99b52;
+  --cor-primaria-escura: #b47d3c;
+  --cor-secundaria: #754c24;
+  --cor-texto: #4a3b2e;
+  --cor-card-bg: #ffffff;
+  --cor-borda-suave: #e8dccc;
+
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(0,0,0,0.08);
+
+  --font-titulo: "Playfair Display", serif;
+  --font-corpo: "Nunito", sans-serif;
+}
+
+/* Fonte importada */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* =========================
+    RESET E ESTILOS BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--cor-bg);
+  color: var(--cor-texto);
+  font-family: var(--font-corpo);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+/* =========================
+    🔝 HEADER
+========================= */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--cor-borda-suave);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+  color: var(--cor-secundaria);
+}
+
+.brand-name {
+  font-family: var(--font-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+/* Menu */
+.nav-list {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--cor-secundaria);
+}
+
+.nav-list a:hover {
+  color: var(--cor-primaria);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* =========================
+    🌄 HERO
+========================= */
+.hero {
+  position: relative;
+  height: 75vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+.hero h1 {
+  font-family: var(--font-titulo);
+  font-size: 3rem;
+}
+
+.lead {
+  margin-top: .6rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+/* Botões */
+.btn {
+  padding: .7rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--cor-secundaria);
+  border: 2px solid #fff;
+  margin-left: .4rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* =========================
+    🥖 PRODUTOS
+========================= */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-titulo);
+  font-size: 2.2rem;
+}
+
+.section-sub {
+  font-size: 1.1rem;
+  opacity: .8;
+}
+
+.cards-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--cor-card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h3 {
+  font-family: var(--font-titulo);
+  margin-bottom: .5rem;
+}
+
+/* =========================
+    📜 SOBRE NÓS
+========================= */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sobre-text {
+  font-size: 1.1rem;
+}
+
+.meta dt {
+  font-weight: bold;
+  margin-top: .8rem;
+}
+
+/* =========================
+    💌 FORMULÁRIO
+========================= */
+.form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-weight: 600;
+  margin-bottom: .3rem;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: .7rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--cor-borda-suave);
+  font-size: 1rem;
+}
+
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: .6rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cor-secundaria);
+  border: 2px solid var(--cor-secundaria);
+}
+
+.btn-ghost:hover {
+  background: var(--cor-secundaria);
+  color: #fff;
+}
+
+.error {
+  color: red;
+  font-size: .9rem;
+}
+
+/* =========================
+    📍 CONTATO INFO
+========================= */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* =========================
+    🦶 FOOTER
+========================= */
+.site-footer {
+  margin-top: 4rem;
+  background: var(--cor-secundaria);
+  color: #fff1dc;
+  padding: 1.8rem 0;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-inner a {
+  color: #fff1dc;
+}
+
+/* =========================
+    🔼 BOTÃO VOLTAR TOPO
+========================= */
+.voltar-topo {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: .6rem .9rem;
+  background: var(--cor-primaria);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: none;
+}
+
+/* =========================
+    📱 RESPONSIVIDADE
+========================= */
+@media (max-width: 900px) {
+  .sobre-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-toggle {
+    display: block;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+}
+/* Botão voltar ao topo */
+#btn-topo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #c59f63;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#btn-topo.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Mensagens de status do formulário */
+#mensagem-status {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+#mensagem-status.sucesso {
+    color: #2d7d46;
+}
+
+#mensagem-status.erro {
+    color: #c0392b;
+}
